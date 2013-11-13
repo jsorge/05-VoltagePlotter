@@ -7,163 +7,202 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		939C07441828AC180003E9E3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939C07431828AC180003E9E3 /* Cocoa.framework */; };
-		939C074E1828AC180003E9E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 939C074C1828AC180003E9E3 /* InfoPlist.strings */; };
-		939C07501828AC180003E9E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 939C074F1828AC180003E9E3 /* main.m */; };
-		939C07541828AC180003E9E3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 939C07521828AC180003E9E3 /* Credits.rtf */; };
-		939C07571828AC180003E9E3 /* JMSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 939C07561828AC180003E9E3 /* JMSAppDelegate.m */; };
-		939C075A1828AC180003E9E3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 939C07581828AC180003E9E3 /* MainMenu.xib */; };
-		939C075C1828AC180003E9E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939C075B1828AC180003E9E3 /* Images.xcassets */; };
-		939C07631828AC190003E9E3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939C07621828AC190003E9E3 /* XCTest.framework */; };
-		939C07641828AC190003E9E3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939C07431828AC180003E9E3 /* Cocoa.framework */; };
-		939C076C1828AC190003E9E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 939C076A1828AC190003E9E3 /* InfoPlist.strings */; };
-		939C076E1828AC190003E9E3 /* Voltage_PlotterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 939C076D1828AC190003E9E3 /* Voltage_PlotterTests.m */; };
+		93AC8D0618305C4D00736823 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AC8D0518305C4D00736823 /* Cocoa.framework */; };
+		93AC8D1018305C4D00736823 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93AC8D0E18305C4D00736823 /* InfoPlist.strings */; };
+		93AC8D1218305C4D00736823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AC8D1118305C4D00736823 /* main.m */; };
+		93AC8D1618305C4D00736823 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 93AC8D1418305C4D00736823 /* Credits.rtf */; };
+		93AC8D1918305C4D00736823 /* JMSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AC8D1818305C4D00736823 /* JMSAppDelegate.m */; };
+		93AC8D1C18305C4D00736823 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93AC8D1A18305C4D00736823 /* MainMenu.xib */; };
+		93AC8D1E18305C4D00736823 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AC8D1D18305C4D00736823 /* Images.xcassets */; };
+		93AC8D2518305C4D00736823 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AC8D2418305C4D00736823 /* XCTest.framework */; };
+		93AC8D2618305C4D00736823 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AC8D0518305C4D00736823 /* Cocoa.framework */; };
+		93AC8D2E18305C4D00736823 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93AC8D2C18305C4D00736823 /* InfoPlist.strings */; };
+		93AC8D3018305C4D00736823 /* Voltage_PlotterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AC8D2F18305C4D00736823 /* Voltage_PlotterTests.m */; };
+		93AC8D3D18305C7A00736823 /* WidgetTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AC8D3A18305C7A00736823 /* WidgetTester.m */; };
+		93AC8D3E18305C7A00736823 /* WidgetTestObservationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AC8D3C18305C7A00736823 /* WidgetTestObservationPoint.m */; };
+		93AF0A6D183067470074BF22 /* JMSWidgetPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AF0A6C183067470074BF22 /* JMSWidgetPlotView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		939C07651828AC190003E9E3 /* PBXContainerItemProxy */ = {
+		93AC8D2718305C4D00736823 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 939C07381828AC180003E9E3 /* Project object */;
+			containerPortal = 93AC8CFA18305C4D00736823 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 939C073F1828AC180003E9E3;
+			remoteGlobalIDString = 93AC8D0118305C4D00736823;
 			remoteInfo = "Voltage Plotter";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		939C07401828AC180003E9E3 /* Voltage Plotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voltage Plotter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		939C07431828AC180003E9E3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		939C07461828AC180003E9E3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		939C07471828AC180003E9E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		939C07481828AC180003E9E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		939C074B1828AC180003E9E3 /* Voltage Plotter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Voltage Plotter-Info.plist"; sourceTree = "<group>"; };
-		939C074D1828AC180003E9E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		939C074F1828AC180003E9E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		939C07511828AC180003E9E3 /* Voltage Plotter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voltage Plotter-Prefix.pch"; sourceTree = "<group>"; };
-		939C07531828AC180003E9E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		939C07551828AC180003E9E3 /* JMSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSAppDelegate.h; sourceTree = "<group>"; };
-		939C07561828AC180003E9E3 /* JMSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSAppDelegate.m; sourceTree = "<group>"; };
-		939C07591828AC180003E9E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		939C075B1828AC180003E9E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		939C07611828AC190003E9E3 /* Voltage PlotterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voltage PlotterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		939C07621828AC190003E9E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		939C07691828AC190003E9E3 /* Voltage PlotterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Voltage PlotterTests-Info.plist"; sourceTree = "<group>"; };
-		939C076B1828AC190003E9E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		939C076D1828AC190003E9E3 /* Voltage_PlotterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Voltage_PlotterTests.m; sourceTree = "<group>"; };
+		93AC8D0218305C4D00736823 /* Voltage Plotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voltage Plotter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93AC8D0518305C4D00736823 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		93AC8D0818305C4D00736823 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		93AC8D0918305C4D00736823 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		93AC8D0A18305C4D00736823 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		93AC8D0D18305C4D00736823 /* Voltage Plotter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Voltage Plotter-Info.plist"; sourceTree = "<group>"; };
+		93AC8D0F18305C4D00736823 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		93AC8D1118305C4D00736823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93AC8D1318305C4D00736823 /* Voltage Plotter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voltage Plotter-Prefix.pch"; sourceTree = "<group>"; };
+		93AC8D1518305C4D00736823 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		93AC8D1718305C4D00736823 /* JMSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSAppDelegate.h; sourceTree = "<group>"; };
+		93AC8D1818305C4D00736823 /* JMSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSAppDelegate.m; sourceTree = "<group>"; };
+		93AC8D1B18305C4D00736823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		93AC8D1D18305C4D00736823 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		93AC8D2318305C4D00736823 /* Voltage PlotterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voltage PlotterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93AC8D2418305C4D00736823 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		93AC8D2B18305C4D00736823 /* Voltage PlotterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Voltage PlotterTests-Info.plist"; sourceTree = "<group>"; };
+		93AC8D2D18305C4D00736823 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		93AC8D2F18305C4D00736823 /* Voltage_PlotterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Voltage_PlotterTests.m; sourceTree = "<group>"; };
+		93AC8D3918305C7A00736823 /* WidgetTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetTester.h; sourceTree = "<group>"; };
+		93AC8D3A18305C7A00736823 /* WidgetTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetTester.m; sourceTree = "<group>"; };
+		93AC8D3B18305C7A00736823 /* WidgetTestObservationPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetTestObservationPoint.h; sourceTree = "<group>"; };
+		93AC8D3C18305C7A00736823 /* WidgetTestObservationPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetTestObservationPoint.m; sourceTree = "<group>"; };
+		93AF0A6B183067470074BF22 /* JMSWidgetPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMSWidgetPlotView.h; sourceTree = "<group>"; };
+		93AF0A6C183067470074BF22 /* JMSWidgetPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMSWidgetPlotView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		939C073D1828AC180003E9E3 /* Frameworks */ = {
+		93AC8CFF18305C4D00736823 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939C07441828AC180003E9E3 /* Cocoa.framework in Frameworks */,
+				93AC8D0618305C4D00736823 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		939C075E1828AC190003E9E3 /* Frameworks */ = {
+		93AC8D2018305C4D00736823 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939C07641828AC190003E9E3 /* Cocoa.framework in Frameworks */,
-				939C07631828AC190003E9E3 /* XCTest.framework in Frameworks */,
+				93AC8D2618305C4D00736823 /* Cocoa.framework in Frameworks */,
+				93AC8D2518305C4D00736823 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		939C07371828AC180003E9E3 = {
+		93AC8CF918305C4D00736823 = {
 			isa = PBXGroup;
 			children = (
-				939C07491828AC180003E9E3 /* Voltage Plotter */,
-				939C07671828AC190003E9E3 /* Voltage PlotterTests */,
-				939C07421828AC180003E9E3 /* Frameworks */,
-				939C07411828AC180003E9E3 /* Products */,
+				93AC8D0B18305C4D00736823 /* Voltage Plotter */,
+				93AC8D2918305C4D00736823 /* Voltage PlotterTests */,
+				93AC8D0418305C4D00736823 /* Frameworks */,
+				93AC8D0318305C4D00736823 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		939C07411828AC180003E9E3 /* Products */ = {
+		93AC8D0318305C4D00736823 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				939C07401828AC180003E9E3 /* Voltage Plotter.app */,
-				939C07611828AC190003E9E3 /* Voltage PlotterTests.xctest */,
+				93AC8D0218305C4D00736823 /* Voltage Plotter.app */,
+				93AC8D2318305C4D00736823 /* Voltage PlotterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		939C07421828AC180003E9E3 /* Frameworks */ = {
+		93AC8D0418305C4D00736823 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				939C07431828AC180003E9E3 /* Cocoa.framework */,
-				939C07621828AC190003E9E3 /* XCTest.framework */,
-				939C07451828AC180003E9E3 /* Other Frameworks */,
+				93AC8D0518305C4D00736823 /* Cocoa.framework */,
+				93AC8D2418305C4D00736823 /* XCTest.framework */,
+				93AC8D0718305C4D00736823 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		939C07451828AC180003E9E3 /* Other Frameworks */ = {
+		93AC8D0718305C4D00736823 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				939C07461828AC180003E9E3 /* AppKit.framework */,
-				939C07471828AC180003E9E3 /* CoreData.framework */,
-				939C07481828AC180003E9E3 /* Foundation.framework */,
+				93AC8D0818305C4D00736823 /* AppKit.framework */,
+				93AC8D0918305C4D00736823 /* CoreData.framework */,
+				93AC8D0A18305C4D00736823 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		939C07491828AC180003E9E3 /* Voltage Plotter */ = {
+		93AC8D0B18305C4D00736823 /* Voltage Plotter */ = {
 			isa = PBXGroup;
 			children = (
-				939C07551828AC180003E9E3 /* JMSAppDelegate.h */,
-				939C07561828AC180003E9E3 /* JMSAppDelegate.m */,
-				939C07581828AC180003E9E3 /* MainMenu.xib */,
-				939C075B1828AC180003E9E3 /* Images.xcassets */,
-				939C074A1828AC180003E9E3 /* Supporting Files */,
+				93AC8D3F18305C7F00736823 /* Model */,
+				93AC8D4018305C8400736823 /* View */,
+				93AC8D4118305C8B00736823 /* Controller */,
+				93AC8D1718305C4D00736823 /* JMSAppDelegate.h */,
+				93AC8D1818305C4D00736823 /* JMSAppDelegate.m */,
+				93AC8D1A18305C4D00736823 /* MainMenu.xib */,
+				93AC8D1D18305C4D00736823 /* Images.xcassets */,
+				93AC8D0C18305C4D00736823 /* Supporting Files */,
 			);
 			path = "Voltage Plotter";
 			sourceTree = "<group>";
 		};
-		939C074A1828AC180003E9E3 /* Supporting Files */ = {
+		93AC8D0C18305C4D00736823 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				939C074B1828AC180003E9E3 /* Voltage Plotter-Info.plist */,
-				939C074C1828AC180003E9E3 /* InfoPlist.strings */,
-				939C074F1828AC180003E9E3 /* main.m */,
-				939C07511828AC180003E9E3 /* Voltage Plotter-Prefix.pch */,
-				939C07521828AC180003E9E3 /* Credits.rtf */,
+				93AC8D0D18305C4D00736823 /* Voltage Plotter-Info.plist */,
+				93AC8D0E18305C4D00736823 /* InfoPlist.strings */,
+				93AC8D1118305C4D00736823 /* main.m */,
+				93AC8D1318305C4D00736823 /* Voltage Plotter-Prefix.pch */,
+				93AC8D1418305C4D00736823 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		939C07671828AC190003E9E3 /* Voltage PlotterTests */ = {
+		93AC8D2918305C4D00736823 /* Voltage PlotterTests */ = {
 			isa = PBXGroup;
 			children = (
-				939C076D1828AC190003E9E3 /* Voltage_PlotterTests.m */,
-				939C07681828AC190003E9E3 /* Supporting Files */,
+				93AC8D2F18305C4D00736823 /* Voltage_PlotterTests.m */,
+				93AC8D2A18305C4D00736823 /* Supporting Files */,
 			);
 			path = "Voltage PlotterTests";
 			sourceTree = "<group>";
 		};
-		939C07681828AC190003E9E3 /* Supporting Files */ = {
+		93AC8D2A18305C4D00736823 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				939C07691828AC190003E9E3 /* Voltage PlotterTests-Info.plist */,
-				939C076A1828AC190003E9E3 /* InfoPlist.strings */,
+				93AC8D2B18305C4D00736823 /* Voltage PlotterTests-Info.plist */,
+				93AC8D2C18305C4D00736823 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93AC8D3F18305C7F00736823 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93AC8D3918305C7A00736823 /* WidgetTester.h */,
+				93AC8D3A18305C7A00736823 /* WidgetTester.m */,
+				93AC8D3B18305C7A00736823 /* WidgetTestObservationPoint.h */,
+				93AC8D3C18305C7A00736823 /* WidgetTestObservationPoint.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		93AC8D4018305C8400736823 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93AF0A6B183067470074BF22 /* JMSWidgetPlotView.h */,
+				93AF0A6C183067470074BF22 /* JMSWidgetPlotView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		93AC8D4118305C8B00736823 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		939C073F1828AC180003E9E3 /* Voltage Plotter */ = {
+		93AC8D0118305C4D00736823 /* Voltage Plotter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 939C07711828AC190003E9E3 /* Build configuration list for PBXNativeTarget "Voltage Plotter" */;
+			buildConfigurationList = 93AC8D3318305C4D00736823 /* Build configuration list for PBXNativeTarget "Voltage Plotter" */;
 			buildPhases = (
-				939C073C1828AC180003E9E3 /* Sources */,
-				939C073D1828AC180003E9E3 /* Frameworks */,
-				939C073E1828AC180003E9E3 /* Resources */,
+				93AC8CFE18305C4D00736823 /* Sources */,
+				93AC8CFF18305C4D00736823 /* Frameworks */,
+				93AC8D0018305C4D00736823 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -171,43 +210,43 @@
 			);
 			name = "Voltage Plotter";
 			productName = "Voltage Plotter";
-			productReference = 939C07401828AC180003E9E3 /* Voltage Plotter.app */;
+			productReference = 93AC8D0218305C4D00736823 /* Voltage Plotter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		939C07601828AC190003E9E3 /* Voltage PlotterTests */ = {
+		93AC8D2218305C4D00736823 /* Voltage PlotterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 939C07741828AC190003E9E3 /* Build configuration list for PBXNativeTarget "Voltage PlotterTests" */;
+			buildConfigurationList = 93AC8D3618305C4D00736823 /* Build configuration list for PBXNativeTarget "Voltage PlotterTests" */;
 			buildPhases = (
-				939C075D1828AC190003E9E3 /* Sources */,
-				939C075E1828AC190003E9E3 /* Frameworks */,
-				939C075F1828AC190003E9E3 /* Resources */,
+				93AC8D1F18305C4D00736823 /* Sources */,
+				93AC8D2018305C4D00736823 /* Frameworks */,
+				93AC8D2118305C4D00736823 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				939C07661828AC190003E9E3 /* PBXTargetDependency */,
+				93AC8D2818305C4D00736823 /* PBXTargetDependency */,
 			);
 			name = "Voltage PlotterTests";
 			productName = "Voltage PlotterTests";
-			productReference = 939C07611828AC190003E9E3 /* Voltage PlotterTests.xctest */;
+			productReference = 93AC8D2318305C4D00736823 /* Voltage PlotterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		939C07381828AC180003E9E3 /* Project object */ = {
+		93AC8CFA18305C4D00736823 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = JMS;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = jsorge;
 				TargetAttributes = {
-					939C07601828AC190003E9E3 = {
-						TestTargetID = 939C073F1828AC180003E9E3;
+					93AC8D2218305C4D00736823 = {
+						TestTargetID = 93AC8D0118305C4D00736823;
 					};
 				};
 			};
-			buildConfigurationList = 939C073B1828AC180003E9E3 /* Build configuration list for PBXProject "Voltage Plotter" */;
+			buildConfigurationList = 93AC8CFD18305C4D00736823 /* Build configuration list for PBXProject "Voltage Plotter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -215,96 +254,99 @@
 				en,
 				Base,
 			);
-			mainGroup = 939C07371828AC180003E9E3;
-			productRefGroup = 939C07411828AC180003E9E3 /* Products */;
+			mainGroup = 93AC8CF918305C4D00736823;
+			productRefGroup = 93AC8D0318305C4D00736823 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				939C073F1828AC180003E9E3 /* Voltage Plotter */,
-				939C07601828AC190003E9E3 /* Voltage PlotterTests */,
+				93AC8D0118305C4D00736823 /* Voltage Plotter */,
+				93AC8D2218305C4D00736823 /* Voltage PlotterTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		939C073E1828AC180003E9E3 /* Resources */ = {
+		93AC8D0018305C4D00736823 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939C074E1828AC180003E9E3 /* InfoPlist.strings in Resources */,
-				939C075C1828AC180003E9E3 /* Images.xcassets in Resources */,
-				939C07541828AC180003E9E3 /* Credits.rtf in Resources */,
-				939C075A1828AC180003E9E3 /* MainMenu.xib in Resources */,
+				93AC8D1018305C4D00736823 /* InfoPlist.strings in Resources */,
+				93AC8D1E18305C4D00736823 /* Images.xcassets in Resources */,
+				93AC8D1618305C4D00736823 /* Credits.rtf in Resources */,
+				93AC8D1C18305C4D00736823 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		939C075F1828AC190003E9E3 /* Resources */ = {
+		93AC8D2118305C4D00736823 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939C076C1828AC190003E9E3 /* InfoPlist.strings in Resources */,
+				93AC8D2E18305C4D00736823 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		939C073C1828AC180003E9E3 /* Sources */ = {
+		93AC8CFE18305C4D00736823 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939C07501828AC180003E9E3 /* main.m in Sources */,
-				939C07571828AC180003E9E3 /* JMSAppDelegate.m in Sources */,
+				93AC8D3D18305C7A00736823 /* WidgetTester.m in Sources */,
+				93AC8D3E18305C7A00736823 /* WidgetTestObservationPoint.m in Sources */,
+				93AC8D1218305C4D00736823 /* main.m in Sources */,
+				93AF0A6D183067470074BF22 /* JMSWidgetPlotView.m in Sources */,
+				93AC8D1918305C4D00736823 /* JMSAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		939C075D1828AC190003E9E3 /* Sources */ = {
+		93AC8D1F18305C4D00736823 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939C076E1828AC190003E9E3 /* Voltage_PlotterTests.m in Sources */,
+				93AC8D3018305C4D00736823 /* Voltage_PlotterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		939C07661828AC190003E9E3 /* PBXTargetDependency */ = {
+		93AC8D2818305C4D00736823 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 939C073F1828AC180003E9E3 /* Voltage Plotter */;
-			targetProxy = 939C07651828AC190003E9E3 /* PBXContainerItemProxy */;
+			target = 93AC8D0118305C4D00736823 /* Voltage Plotter */;
+			targetProxy = 93AC8D2718305C4D00736823 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		939C074C1828AC180003E9E3 /* InfoPlist.strings */ = {
+		93AC8D0E18305C4D00736823 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				939C074D1828AC180003E9E3 /* en */,
+				93AC8D0F18305C4D00736823 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		939C07521828AC180003E9E3 /* Credits.rtf */ = {
+		93AC8D1418305C4D00736823 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				939C07531828AC180003E9E3 /* en */,
+				93AC8D1518305C4D00736823 /* en */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		939C07581828AC180003E9E3 /* MainMenu.xib */ = {
+		93AC8D1A18305C4D00736823 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				939C07591828AC180003E9E3 /* Base */,
+				93AC8D1B18305C4D00736823 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		939C076A1828AC190003E9E3 /* InfoPlist.strings */ = {
+		93AC8D2C18305C4D00736823 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				939C076B1828AC190003E9E3 /* en */,
+				93AC8D2D18305C4D00736823 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -312,7 +354,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		939C076F1828AC190003E9E3 /* Debug */ = {
+		93AC8D3118305C4D00736823 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -349,7 +391,7 @@
 			};
 			name = Debug;
 		};
-		939C07701828AC190003E9E3 /* Release */ = {
+		93AC8D3218305C4D00736823 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -380,7 +422,7 @@
 			};
 			name = Release;
 		};
-		939C07721828AC190003E9E3 /* Debug */ = {
+		93AC8D3418305C4D00736823 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -393,7 +435,7 @@
 			};
 			name = Debug;
 		};
-		939C07731828AC190003E9E3 /* Release */ = {
+		93AC8D3518305C4D00736823 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -406,7 +448,7 @@
 			};
 			name = Release;
 		};
-		939C07751828AC190003E9E3 /* Debug */ = {
+		93AC8D3718305C4D00736823 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Voltage Plotter.app/Contents/MacOS/Voltage Plotter";
@@ -428,7 +470,7 @@
 			};
 			name = Debug;
 		};
-		939C07761828AC190003E9E3 /* Release */ = {
+		93AC8D3818305C4D00736823 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Voltage Plotter.app/Contents/MacOS/Voltage Plotter";
@@ -449,32 +491,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		939C073B1828AC180003E9E3 /* Build configuration list for PBXProject "Voltage Plotter" */ = {
+		93AC8CFD18305C4D00736823 /* Build configuration list for PBXProject "Voltage Plotter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				939C076F1828AC190003E9E3 /* Debug */,
-				939C07701828AC190003E9E3 /* Release */,
+				93AC8D3118305C4D00736823 /* Debug */,
+				93AC8D3218305C4D00736823 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		939C07711828AC190003E9E3 /* Build configuration list for PBXNativeTarget "Voltage Plotter" */ = {
+		93AC8D3318305C4D00736823 /* Build configuration list for PBXNativeTarget "Voltage Plotter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				939C07721828AC190003E9E3 /* Debug */,
-				939C07731828AC190003E9E3 /* Release */,
+				93AC8D3418305C4D00736823 /* Debug */,
+				93AC8D3518305C4D00736823 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		939C07741828AC190003E9E3 /* Build configuration list for PBXNativeTarget "Voltage PlotterTests" */ = {
+		93AC8D3618305C4D00736823 /* Build configuration list for PBXNativeTarget "Voltage PlotterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				939C07751828AC190003E9E3 /* Debug */,
-				939C07761828AC190003E9E3 /* Release */,
+				93AC8D3718305C4D00736823 /* Debug */,
+				93AC8D3818305C4D00736823 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 939C07381828AC180003E9E3 /* Project object */;
+	rootObject = 93AC8CFA18305C4D00736823 /* Project object */;
 }
