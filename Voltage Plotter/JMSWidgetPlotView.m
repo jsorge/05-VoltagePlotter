@@ -10,6 +10,8 @@
 #import "WidgetTester.h"
 #import "WidgetTestObservationPoint.h"
 
+NSString *windowSizeChangeNotification = @"windowDidResize";
+
 @interface JMSWidgetPlotView ()
 @property (nonatomic)JMSWidgetPlotViewStyle plotStyle;
 @property (nonatomic)double xScale;
@@ -17,12 +19,11 @@
 @end
 
 @implementation JMSWidgetPlotView
-
 #pragma mark - Properties
 - (double)xScale
 {
     if (!_xScale && self.widgetTester) {
-        _xScale = self.bounds.size.width / self.widgetTester.timeMaximum;
+        _xScale = self.bounds.size.width / ( self.widgetTester.timeMaximum - self.widgetTester.timeMinimum );
     }
     return _xScale;
 }
@@ -30,7 +31,7 @@
 - (double)yScale
 {
     if (!_yScale && self.widgetTester) {
-        _yScale = self.bounds.size.height / self.widgetTester.sensorMaximum;
+        _yScale = self.bounds.size.height / ( self.widgetTester.sensorMaximum - self.widgetTester.sensorMinimum );
     }
     return _yScale;
 }
@@ -41,6 +42,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(resetAxisScales:)
+                                                     name:windowSizeChangeNotification
+                                                   object:nil];
     }
     return self;
 }
@@ -54,7 +59,7 @@
 	
     NSBezierPath *path = [NSBezierPath bezierPath];
     NSPoint firstPoint;
-    firstPoint.x = self.widgetTester.timeMinimum * self.xScale;
+    firstPoint.x = 0;
     firstPoint.y = self.widgetTester.sensorMinimum * self.yScale;
     [path moveToPoint:firstPoint];
     
@@ -81,10 +86,22 @@
 {
     NSPoint thePoint;
     
-    thePoint.x = point.observationTime * self.xScale;
-    thePoint.y = point.voltage * self.yScale;
+    thePoint.x = ( point.observationTime - self.widgetTester.timeMinimum ) * self.xScale;
+    thePoint.y = ( point.voltage - self.widgetTester.sensorMinimum ) * self.yScale;
     
     return thePoint;
+}
+
+- (void)resetAxisScales:(id)sender
+{
+    self.xScale = 0;
+    self.yScale = 0;
+}
+
+#pragma mark - Dealloc
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

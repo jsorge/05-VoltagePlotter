@@ -13,6 +13,7 @@
 
 @interface JMSAppDelegate ()
 @property (weak) IBOutlet JMSWidgetPlotView *plotView;
+@property (weak) IBOutlet NSSegmentedControl *styleSegmentedControl;
 @end
 
 @implementation JMSAppDelegate
@@ -21,6 +22,11 @@
 {
     [self.widgetTester performTest];
     self.plotView.widgetTester = self.widgetTester;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(windowDidResize:)
+                                                 name:NSWindowDidResizeNotification
+                                               object:nil];
 }
 
 #pragma mark - Properties
@@ -62,5 +68,18 @@
             [self.plotView changePlotStyle:WidgetViewStyleUgly];
             break;
     }
+}
+
+#pragma mark - NSWindowDelegate
+- (void)windowDidResize:(NSNotification *)notification
+{
+    [self.plotView setNeedsDisplay:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:windowSizeChangeNotification object:nil];
+}
+
+#pragma mark - Dealloc
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 @end

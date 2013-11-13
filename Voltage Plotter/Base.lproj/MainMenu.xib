@@ -824,6 +824,7 @@
         <customObject id="494" customClass="JMSAppDelegate">
             <connections>
                 <outlet property="plotView" destination="85V-I4-vtj" id="UOQ-sb-lzW"/>
+                <outlet property="styleSegmentedControl" destination="Pql-yB-6dh" id="7c1-AL-fpe"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>

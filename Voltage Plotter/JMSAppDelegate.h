@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 @class WidgetTester;
 
-@interface JMSAppDelegate : NSObject <NSApplicationDelegate>
+@interface JMSAppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (strong, nonatomic)WidgetTester *widgetTester;

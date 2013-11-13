@@ -17,6 +17,8 @@ typedef NS_ENUM(NSInteger, JMSWidgetPlotViewStyle) {
     WidgetViewStyleUgly
 };
 
+extern NSString *windowSizeChangeNotification;
+
 @property(strong, nonatomic)WidgetTester *widgetTester;
 
 - (void)changePlotStyle:(JMSWidgetPlotViewStyle)plotStyle;
