@@ -1,0 +1,20 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+#if DEBUG
+#define MyLog(args...)    NSLog( @"%@", [NSString stringWithFormat: args])
+#define LogMethod() NSLog(@"%s (line %ud)", __PRETTY_FUNCTION__, __LINE__)
+
+#else
+// DEBUG not defined:
+
+#define MyLog(args...)    // do nothing.
+#define LogMethod()
+
+#endif
