@@ -706,8 +706,8 @@
                                             <segmentedCell key="cell" alignment="left" style="rounded" trackingMode="selectOne" id="hHo-XZ-PuE">
                                                 <font key="font" metaFont="system"/>
                                                 <segments>
-                                                    <segment label="Good"/>
-                                                    <segment label="Bad" selected="YES" tag="1"/>
+                                                    <segment label="Good" selected="YES"/>
+                                                    <segment label="Bad" tag="1"/>
                                                     <segment label="Ugly"/>
                                                 </segments>
                                             </segmentedCell>

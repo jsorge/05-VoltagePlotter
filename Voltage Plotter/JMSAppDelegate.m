@@ -23,6 +23,8 @@
     [self.widgetTester performTest];
     self.plotView.widgetTester = self.widgetTester;
     
+    [self changePlotStyle:self.styleSegmentedControl];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(windowDidResize:)
                                                  name:NSWindowDidResizeNotification
@@ -55,7 +57,7 @@
 
 - (IBAction)changePlotStyle:(NSSegmentedControl *)sender
 {
-    switch ([sender integerValue]) {
+    switch (sender.selectedSegment) {
         case 0:
             [self.plotView changePlotStyle:WidgetViewStyleGood];
             break;
@@ -74,7 +76,7 @@
 - (void)windowDidResize:(NSNotification *)notification
 {
     [self.plotView setNeedsDisplay:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:windowSizeChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:jmsWindowSizeChangeNotification object:nil];
 }
 
 #pragma mark - Dealloc
