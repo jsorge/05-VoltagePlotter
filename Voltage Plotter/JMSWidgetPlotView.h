@@ -20,7 +20,6 @@ typedef NS_ENUM(NSInteger, JMSWidgetPlotViewStyle) {
 extern NSString *jmsWindowSizeChangeNotification;
 
 @property (strong, nonatomic)WidgetTester *widgetTester;
-@property (strong, nonatomic)NSArray *plotPoints; //of NSPoints
 
 - (void)changePlotStyle:(JMSWidgetPlotViewStyle)plotStyle;
 

@@ -27,16 +27,16 @@ NSString *jmsWindowSizeChangeNotification = @"windowDidResize";
 #pragma mark - Properties
 - (double)xScale
 {
-    if (!_xScale && self.widgetTester) {
-        _xScale = self.bounds.size.width / ( self.widgetTester.timeMaximum - self.widgetTester.timeMinimum );
+    if ( ( _xScale == 0 ) && self.widgetTester) {
+        _xScale = self.frame.size.width / ( self.widgetTester.timeMaximum - self.widgetTester.timeMinimum );
     }
     return _xScale;
 }
 
 - (double)yScale
 {
-    if (!_yScale && self.widgetTester) {
-        _yScale = self.bounds.size.height / ( self.widgetTester.sensorMaximum - self.widgetTester.sensorMinimum );
+    if ( ( _yScale == 0 ) && self.widgetTester) {
+        _yScale = self.frame.size.height / ( self.widgetTester.sensorMaximum - self.widgetTester.sensorMinimum );
     }
     return _yScale;
 }
