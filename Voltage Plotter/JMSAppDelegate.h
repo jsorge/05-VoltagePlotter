@@ -12,6 +12,5 @@
 @interface JMSAppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (strong, nonatomic)WidgetTester *widgetTester;
 
 @end

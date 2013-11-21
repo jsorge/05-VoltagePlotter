@@ -835,7 +835,7 @@
                 <string>observationTime</string>
             </declaredKeys>
             <connections>
-                <binding destination="494" name="contentArray" keyPath="self.widgetTester.testData" id="69D-Cd-hK5"/>
+                <binding destination="494" name="contentArray" keyPath="self.plotView.widgetTester.testData" id="qaQ-O6-1wA"/>
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="gRl-Kh-75K"/>

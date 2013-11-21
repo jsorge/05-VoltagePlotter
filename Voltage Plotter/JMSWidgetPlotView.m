@@ -10,84 +10,156 @@
 #import "WidgetTester.h"
 #import "WidgetTestObservationPoint.h"
 
-NSString *jmsWindowSizeChangeNotification = @"windowDidResize";
 
 @interface JMSWidgetPlotView ()
 @property (nonatomic)JMSWidgetPlotViewStyle plotStyle;
-@property (nonatomic)double xScale;
-@property (nonatomic)double yScale;
 @property (strong, nonatomic)NSString *stringAtMousePointer;
 @property (nonatomic)NSPoint currentMousePoint;
 @property (strong, nonatomic)NSColor *lineColor;
 @property (nonatomic)CGFloat lineWidth;
 @property (strong, nonatomic)NSColor *backgroundColor;
+@property (strong, nonatomic)NSColor *fillColor;
+@property (nonatomic)double xRange;
+@property (nonatomic)double yRange;
 @end
 
+NSString *modelDidChangeNotification = @"modelDidChange";
+
 @implementation JMSWidgetPlotView
-#pragma mark - Properties
-- (double)xScale
-{
-    if ( ( _xScale == 0 ) && self.widgetTester) {
-        _xScale = self.frame.size.width / ( self.widgetTester.timeMaximum - self.widgetTester.timeMinimum );
-    }
-    return _xScale;
-}
-
-- (double)yScale
-{
-    if ( ( _yScale == 0 ) && self.widgetTester) {
-        _yScale = self.frame.size.height / ( self.widgetTester.sensorMaximum - self.widgetTester.sensorMinimum );
-    }
-    return _yScale;
-}
-
 #pragma mark - Initializers
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code here.
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(resetAxisScales:)
-                                                     name:jmsWindowSizeChangeNotification
+                                                 selector:@selector(resetAxisRanges)
+                                                     name:modelDidChangeNotification
                                                    object:nil];
         NSTrackingArea *ta = [[NSTrackingArea alloc] initWithRect:NSZeroRect
-                                     options: ( NSTrackingMouseEnteredAndExited
-                                               | NSTrackingMouseMoved
-                                               | NSTrackingActiveAlways
-                                               | NSTrackingInVisibleRect )
-                                       owner:self
-                                    userInfo:nil];
+                                                          options: ( NSTrackingMouseEnteredAndExited
+                                                                    | NSTrackingMouseMoved
+                                                                    | NSTrackingActiveAlways
+                                                                    | NSTrackingInVisibleRect )
+                                                            owner:self
+                                                         userInfo:nil];
         [self addTrackingArea:ta];
     }
     return self;
 }
 
+#pragma mark - Properties
+- (double)xRange
+{
+    if (_xRange == 0) {
+        _xRange = self.widgetTester.timeMaximum - self.widgetTester.timeMinimum;
+    }
+    return _xRange;
+}
+
+- (double)yRange
+{
+    if (_yRange == 0) {
+        _yRange = self.widgetTester.sensorMaximum - self.widgetTester.sensorMinimum;
+    }
+    return _yRange;
+}
+
+- (WidgetTester *)widgetTester
+{
+    if (!_widgetTester) {
+        _widgetTester = [[WidgetTester alloc] init];
+        [_widgetTester performTest];
+    }
+    return _widgetTester;
+}
+
+#pragma mark - drawRect
 - (void)drawRect:(NSRect)dirtyRect
 {
 	[super drawRect:dirtyRect];
-    
-    [self.backgroundColor setFill];
-    NSRectFill(dirtyRect);
-	
+
     NSBezierPath *path = [NSBezierPath bezierPath];
+    path.lineCapStyle = NSRoundLineCapStyle;
     NSPoint firstPoint;
     firstPoint.x = 0;
-    firstPoint.y = self.widgetTester.sensorMinimum * self.yScale;
+    firstPoint.y = 0;
     [path moveToPoint:firstPoint];
     
-    for (int i = 1; i < [self.widgetTester.testData count]; i++) {
-        WidgetTestObservationPoint *plotPoint = self.widgetTester.testData[i];
-        NSPoint nextPoint = [self projectObservationPointToView:plotPoint];
+    for (WidgetTestObservationPoint *plotPoint in self.widgetTester.testData) {
+        NSPoint nextPoint;
+        nextPoint.x = ((plotPoint.observationTime - self.widgetTester.timeMinimum) * self.bounds.size.width) / self.xRange;
+        nextPoint.y = ((plotPoint.voltage - self.widgetTester.sensorMinimum) * self.bounds.size.height) / self.yRange;
         [path lineToPoint:nextPoint];
     }
+    
+    NSPoint lastPoint;
+    lastPoint.x = self.bounds.size.width;
+    lastPoint.y = 0;
+    [path lineToPoint:lastPoint];
+    [path closePath];
+    
+    NSColor *backgroundColor;
+    NSColor *fillColor;
+    NSColor *lineColor;
+    
+    switch (self.plotStyle) {
+        case WidgetViewStyleGood:
+            path.lineWidth = 2.0;
+            lineColor = [NSColor blackColor];
+            backgroundColor = [NSColor whiteColor];
+            fillColor = [NSColor whiteColor];
+            [path setLineDash:0 count:0 phase:0];
+            break;
+            
+        case WidgetViewStyleBad:
+            path.lineWidth = 4.0;
+            lineColor = [NSColor purpleColor];
+            backgroundColor = [NSColor yellowColor];
+            fillColor = [self invertColor:lineColor];
+            [path setLineDash:0 count:0 phase:0];
+            break;
+            
+        case WidgetViewStyleUgly:
+            path.lineWidth = 3.0;
+            lineColor = [self randomColor];
+            backgroundColor = [NSColor orangeColor];
+            fillColor = [self invertColor:lineColor];
+            
+            CGFloat dashes[4];
+            dashes[0] = 2.0;
+            dashes[1] = 8.0;
+            dashes[2] = 6.0;
+            dashes[3] = 8.0;
+            [path setLineDash:dashes count:4 phase:0.0];
+            break;
+    }
+    
+    [backgroundColor setFill];
+    NSRectFill(dirtyRect);
 
-    [path setLineWidth:self.lineWidth];
-    [self.lineColor set];
+    [lineColor set];
     [path stroke];
     
+    [fillColor set];
+    [path fill];
+
     if (self.currentMousePoint.x != 0) {
-        NSAttributedString *coordinateString = [[NSAttributedString alloc] initWithString:self.stringAtMousePointer];
+        NSDictionary *attributes;
+        
+        NSUInteger modifierFlags = [NSEvent modifierFlags];
+        switch (modifierFlags) {
+            case NSShiftKeyMask:
+                attributes = @{NSFontAttributeName: [NSFont fontWithName:@"Futura" size:14.0],
+                               NSForegroundColorAttributeName: [NSColor whiteColor],
+                               NSBackgroundColorAttributeName: [NSColor blackColor] };
+                break;
+                
+            default:
+                attributes = @{NSFontAttributeName: [NSFont fontWithName:@"Futura" size:14.0],
+                                             NSForegroundColorAttributeName: [NSColor blackColor],
+                                             NSBackgroundColorAttributeName: [NSColor grayColor] };
+        }
+        NSAttributedString *coordinateString = [[NSAttributedString alloc] initWithString:self.stringAtMousePointer attributes:attributes];
         [coordinateString drawAtPoint:self.currentMousePoint];
 
     }
@@ -96,57 +168,67 @@ NSString *jmsWindowSizeChangeNotification = @"windowDidResize";
 #pragma mark - Public API
 - (void)changePlotStyle:(JMSWidgetPlotViewStyle)plotStyle
 {
-    switch (plotStyle) {
-        case WidgetViewStyleGood:
-            self.lineWidth = 1.0;
-            self.lineColor = [NSColor blackColor];
-            self.backgroundColor = [NSColor whiteColor];
-            break;
-            
-        case WidgetViewStyleBad:
-            self.lineWidth = 3.0;
-            self.lineColor = [NSColor greenColor];
-            self.backgroundColor = [NSColor orangeColor];
-            break;
-            
-        case WidgetViewStyleUgly:
-            self.lineWidth = 5.0;
-            self.lineColor = [NSColor purpleColor];
-            self.backgroundColor = [NSColor yellowColor];
-            break;
-    }
+    [self setPlotStyle:plotStyle];
     [self setNeedsDisplay:YES];
 }
 
 #pragma mark - Helpers
-- (NSPoint)projectObservationPointToView:(WidgetTestObservationPoint *)point
+- (NSPoint)projectViewPointToObservationPoint:(NSPoint)point
 {
-    NSPoint thePoint;
+    NSPoint dataPoint;
     
-    thePoint.x = ( point.observationTime - self.widgetTester.timeMinimum ) * self.xScale;
-    thePoint.y = ( point.voltage - self.widgetTester.sensorMinimum ) * self.yScale;
+    dataPoint.x = (point.x * self.xRange / self.bounds.size.width) + self.widgetTester.timeMinimum;
+    dataPoint.y = (point.y * self.yRange / self.bounds.size.height) + self.widgetTester.sensorMinimum;
     
-    return thePoint;
+    return dataPoint;
 }
 
-- (void)resetAxisScales:(id)sender
+- (NSColor *)randomColor
 {
-    self.xScale = 0;
-    self.yScale = 0;
+    float rand_max = RAND_MAX;
+    float red = rand() / rand_max;
+    float green = rand() / rand_max;
+    float blue = rand() / rand_max;
+    return [NSColor colorWithCalibratedRed:red
+                                     green:green
+                                      blue:blue
+                                     alpha:1.0];
 }
 
-#pragma mark - Dealloc
-- (void)dealloc
+- (NSColor *)invertColor:(NSColor *)originalColor
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    return [NSColor colorWithCalibratedRed:(1.0 - [originalColor redComponent])
+                                     green:(1.0 - [originalColor greenComponent])
+                                      blue:(1.0 - [originalColor blueComponent])
+                                     alpha:[originalColor alphaComponent]];
+}
+
+- (void)resetAxisRanges
+{
+    self.xRange = 0;
+    self.yRange = 0;
 }
 
 #pragma mark - Tracking Area
 - (void)mouseMoved:(NSEvent *)theEvent
 {
     self.currentMousePoint = [self convertPoint:theEvent.locationInWindow fromView:nil];
-    self.stringAtMousePointer = [NSString stringWithFormat: @"Mouse at: %@", NSStringFromPoint(self.currentMousePoint)];
+    
+    NSPoint dataPoint = [self projectViewPointToObservationPoint:self.currentMousePoint];
+    
+    self.stringAtMousePointer = [NSString stringWithFormat: @"Mouse: (%0.2f, %0.2f), Data: (%0.2f, %0.2f)", self.currentMousePoint.x, self.currentMousePoint.y, dataPoint.x, dataPoint.y];
     [self setNeedsDisplay:YES];
 }
 
+- (void)mouseExited:(NSEvent *)theEvent
+{
+    self.stringAtMousePointer = @"";
+    [self setNeedsDisplay:YES];
+}
+
+#pragma mark - Dealloc
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end
